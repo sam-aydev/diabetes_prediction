@@ -38,12 +38,16 @@ elif smoking_history == "current":
 else:
     smoking_num = 3
 
+
 # Create input array
 input_data = np.array([[gender_num, age, hypertension, heart_disease, smoking_num,
                         bmi, HbA1c_level, blood_glucose_level]])
+columns = ['gender', 'age', 'hypertension', 'heart_disease', 
+           'smoking_history', 'bmi', 'HbA1c_level', 'blood_glucose_level']
 
+input_df = pd.DataFrame(input_data, columns=columns)
 # Scale it
-input_scaled = scaler.transform(input_data)
+input_scaled = scaler.transform(input_df)
 
 # Predict
 if st.button("🔍 Predict Diabetes Risk"):
