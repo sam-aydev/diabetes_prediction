@@ -2,11 +2,10 @@ import streamlit as st
 import joblib
 import numpy as np
 import pandas as pd
-import warnings
 
 
 # --- Load trained model and preprocessing tools ---
-model = joblib.load("diabetes_model.pkl")
+model = joblib.load("best_model.pkl")
 scaler = joblib.load("scaler.pkl")
 
 # Load saved label encoders
